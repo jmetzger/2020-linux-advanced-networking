@@ -1,5 +1,5 @@
 # 2020-LFS416-remote
-LFS416 - Training - Notes 
+LFS416 - Remote - Training - Notes 
 
 ## Install Extension Pack Virtualbox ##
 
