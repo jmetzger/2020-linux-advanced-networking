@@ -11,6 +11,15 @@ LFS416 - Remote - Training - Notes
 Datei -> Einstellungen -> Zusatzpakete
 ```
 
+## Kali - Linux - Change Keyboard setting 
+
+```
+o Kali->Icon (Top,Left)-> Settings Keyboard
+o Tab -> Layout -> Uncheck -> Use System Settings
+o Add German 
+o Change Layout Option: e.g. ALT + Space 
+```
+
 ## Telekom - Security - Framework ##
 
 ```
