@@ -11,6 +11,13 @@ LFS416 - Remote - Training - Notes
 Datei -> Einstellungen -> Zusatzpakete
 ```
 
+## Telekom - Security - Framework ##
+
+```
+# That is a really good guidance 
+https://github.com/telekomsecurity/TelekomSecurity.Compliance.Framework
+```
+
 ## SCAP ##
 
   * gesprochen es-cap 
