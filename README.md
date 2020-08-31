@@ -10,3 +10,8 @@ LFS416 - Training - Notes
 # Schritt 2: (in virtualbox)
 Datei -> Einstellungen -> Zusatzpakete
 ```
+
+## SCAP ##
+
+  * gesprochen es-cap 
+  * Begriffsklärung: https://de.wikipedia.org/wiki/Security_Content_Automation_Protocol#:~:text=Das%20Security%20Content%20Automation%20Protocol,der%20US%2DRegierung%20f%C3%BCr%20SCAP.
