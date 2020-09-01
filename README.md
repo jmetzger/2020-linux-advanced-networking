@@ -1,6 +1,13 @@
 # 2020-LFS416-remote
 LFS416 - Remote - Training - Notes 
 
+## Show all services with systemd ## 
+
+```
+systemctl -t service
+systemctl list-units -t service 
+```
+
 ## Install Extension Pack Virtualbox ##
 
 ```
