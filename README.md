@@ -1,6 +1,11 @@
 # 2020-LFS416-remote
 LFS416 - Remote - Training - Notes 
 
+## Logwatch and systemd ##
+
+  * at least version 7.4. needed 
+  * https://bugzilla.redhat.com/show_bug.cgi?id=1504984
+
 ## Linux Security pdf ##
 
 http://schulung.t3isp.de/documents/linux-security.pdf
