@@ -1,6 +1,10 @@
 # 2020-LFS416-remote
 LFS416 - Remote - Training - Notes 
 
+## Linux Security pdf ##
+
+http://schulung.t3isp.de/documents/linux-security.pdf
+
 ## Tricky systemctl commands ## 
 
 ```
