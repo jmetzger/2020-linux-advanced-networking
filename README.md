@@ -14,6 +14,14 @@ systemctl list-unit-files -t services --no-pager | grep httpd
 
 ```
 
+## nftable - commands ##
+
+```
+# Show all nft rules 
+nft list ruleset 
+```
+
+
 ## Install Extension Pack Virtualbox ##
 
 ```
