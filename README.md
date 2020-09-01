@@ -1,11 +1,17 @@
 # 2020-LFS416-remote
 LFS416 - Remote - Training - Notes 
 
-## Show all services with systemd ## 
+## Tricky systemctl commands ## 
 
 ```
+# show all services 
+
 systemctl -t service
 systemctl list-units -t service 
+
+# show service httpd (not enabled / no running 
+systemctl list-unit-files -t services --no-pager | grep httpd 
+
 ```
 
 ## Install Extension Pack Virtualbox ##
