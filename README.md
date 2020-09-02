@@ -1,6 +1,15 @@
 # 2020-LFS416-remote
 LFS416 - Remote - Training - Notes 
 
+## nmap 
+
+https://nmap.org/man/de/man-performance.html
+
+### Timing templates 
+
+https://nmap.org/man/de/man-performance.html
+https://nmap.org/book/performance-timing-templates.html
+
 ## Logwatch and systemd ##
 
   * at least version 7.4. needed 
