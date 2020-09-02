@@ -1,6 +1,16 @@
 # 2020-LFS416-remote
 LFS416 - Remote - Training - Notes 
 
+## Failed users 
+
+### Remote Users 
+
+```
+journalctl -u sshd.service | grep -i "failed password" 
+cat /var/log/secure | "Failed password" 
+```
+
+
 ## nmap 
 
 https://nmap.org/man/de/man-performance.html
