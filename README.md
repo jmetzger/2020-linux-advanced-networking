@@ -10,6 +10,9 @@ https://nmap.org/man/de/man-performance.html
 https://nmap.org/man/de/man-performance.html
 https://nmap.org/book/performance-timing-templates.html
 
+### legal issues
+https://nmap.org/book/legal-issues.html
+
 ## Logwatch and systemd ##
 
   * at least version 7.4. needed 
