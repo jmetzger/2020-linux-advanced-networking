@@ -79,6 +79,18 @@ o Change Layout Option: e.g. ALT + Space
 https://github.com/telekomsecurity/TelekomSecurity.Compliance.Framework
 ```
 
+## OSCAP 
+```
+OpenScap
+yum install openscap-scanner
+yum install scap-security-guide
+ls -l  /usr/share/xml/scap/ssg/content/ssg-*-ds.xml
+oscap info  /usr/share/xml/scap/ssg/content/ssg-centos7-ds.xml
+oscap xccdf eval      \--profile xccdf_org.ssgproject.content_profile_standard \--results-arf arf.xml  \--report report.html   \/usr/share/xml/scap/ssg/content/ssg-centos7-ds.xml
+
+Report und /tmp/report.html 
+```
+
 ## SCAP ##
 
   * gesprochen es-cap 
