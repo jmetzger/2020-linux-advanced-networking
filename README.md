@@ -1,6 +1,10 @@
 # 2020-LFS416-remote
 LFS416 - Remote - Training - Notes 
 
+## selinux 
+
+https://www.thegeekdiary.com/centos-redhat-how-to-set-selinux-modes/
+
 ## openvas -> gvm (Greenbone Vulnerability Management) / mrazavi 
 
 ```
