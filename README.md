@@ -1,6 +1,14 @@
 # 2020-LFS416-remote
 LFS416 - Remote - Training - Notes 
 
+## dnf / dnf-automatic 
+
+```
+https://cheatography.com/misterrabinhalder/cheat-sheets/dnf/
+https://computingforgeeks.com/enable-automatic-software-updates-on-centos-rhel-8/
+```
+
+
 ## Failed users 
 
 ### Remote Users 
