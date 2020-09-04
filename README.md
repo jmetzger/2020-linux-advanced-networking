@@ -140,3 +140,4 @@ Report und /tmp/report.html
 ## Ansible
 
   * https://www.biteno.com/tutorial/ansible-tutorial-einfuehrung/
+  * https://dzone.com/articles/managing-your-macbook-with-ansible
