@@ -1,6 +1,14 @@
 # 2020-LFS416-remote
 LFS416 - Remote - Training - Notes 
 
+## openvas -> gvm (Greenbone Vulnerability Management) / mrazavi 
+
+```
+Installation on Ubuntu 20.04 LTS
+https://launchpad.net/~mrazavi/+archive/ubuntu/gvm
+https://www.osboxes.org/ubuntu/
+```
+
 ## dnf / dnf-automatic 
 
 ```
