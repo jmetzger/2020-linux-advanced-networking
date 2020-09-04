@@ -25,6 +25,9 @@ systemctl status gsad # web ui
 
 ```
 
+Documentation 
+https://docs.greenbone.net/GSM-Manual/gos-20.08/en/web-interface.html
+
 ## dnf / dnf-automatic 
 
 ```
