@@ -117,8 +117,8 @@ ONBOOT=yes
 
 #### Tools #### 
 
-  • ping
-  • traceroute
-  • nmap
-  • DNS and IP address testing
+  * ping
+  * traceroute
+  * nmap
+  * DNS and IP address testing
 
