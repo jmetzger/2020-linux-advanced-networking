@@ -1,143 +1,30 @@
-# 2020-LFS416-remote
-LFS416 - Remote - Training - Notes 
+# 2020-Linux Advanced Networking - Training - Notes 
 
-## selinux 
-
-https://www.thegeekdiary.com/centos-redhat-how-to-set-selinux-modes/
-
-## openvas -> gvm (Greenbone Vulnerability Management) / mrazavi 
+## Prerequisites 
 
 ```
-Installation on Ubuntu 20.04 LTS
-https://launchpad.net/~mrazavi/+archive/ubuntu/gvm
-https://www.osboxes.org/ubuntu/
-
-https://<ip>:9392
-
-(The port number has changed according to the upstream in the new version and the old 4000 port number is no longer the default)
-
-The default username/password is as follows:
-
-Username: admin
-Password: admin
-
-You can check the status of greenbone daemons with systemctl:
-
-systemctl status ospd-openvas # scanner
-systemctl status gvmd # manager
-systemctl status gsad # web ui
-
-```
-
-Documentation 
-https://docs.greenbone.net/GSM-Manual/gos-20.08/en/web-interface.html
-
-## dnf / dnf-automatic 
-
-```
-https://cheatography.com/misterrabinhalder/cheat-sheets/dnf/
-https://computingforgeeks.com/enable-automatic-software-updates-on-centos-rhel-8/
+We will use Centos 8 for the training 
 ```
 
 
-## Failed users 
+## Topics 
 
-### Remote Users 
+### 1. Similarities New Distributions 
 
-```
-journalctl -u sshd.service | grep -i "failed password" 
-cat /var/log/secure | "Failed password" 
-```
+  * systemd 
+  * journald 
+  * firewalld 
+  * ip 
+
+### 2. Runtime 
 
 
-## nmap 
 
-https://nmap.org/man/de/man-performance.html
-
-### Timing templates 
-
-https://nmap.org/man/de/man-performance.html
-https://nmap.org/book/performance-timing-templates.html
-
-### legal issues
-https://nmap.org/book/legal-issues.html
-
-## Logwatch and systemd ##
-
-  * at least version 7.4. needed 
-  * https://bugzilla.redhat.com/show_bug.cgi?id=1504984
-
-## Linux Security pdf ##
-
-http://schulung.t3isp.de/documents/linux-security.pdf
-
-## Tricky systemctl commands ## 
-
-```
-# show all services 
-
-systemctl -t service
-systemctl list-units -t service 
-
-# show service httpd (not enabled / no running 
-systemctl list-unit-files -t services --no-pager | grep httpd 
 
 ```
 
-## nftable - commands ##
+
+
 
 ```
-# Show all nft rules 
-nft list ruleset 
-```
 
-
-## Install Extension Pack Virtualbox ##
-
-```
-# enables autoscale + usb 2.0 
-# Schritt 1:
-# https://download.virtualbox.org/virtualbox/6.1.12/Oracle_VM_VirtualBox_Extension_Pack-6.1.12.vbox-extpack
-# Schritt 2: (in virtualbox)
-Datei -> Einstellungen -> Zusatzpakete
-```
-
-## Kali - Linux - Change Keyboard setting 
-
-```
-o Kali->Icon (Top,Left)-> Settings Keyboard
-o Tab -> Layout -> Uncheck -> Use System Settings
-o Add German 
-o Change Layout Option: e.g. ALT + Space 
-```
-
-## Telekom - Security - Framework ##
-
-```
-# That is a really good guidance 
-https://github.com/telekomsecurity/TelekomSecurity.Compliance.Framework
-# 
-https://www.cyberciti.biz/tips/linux-iptables-8-how-to-avoid-spoofing-and-bad-addresses-attack.html
-```
-
-## OSCAP 
-```
-OpenScap
-yum install openscap-scanner
-yum install scap-security-guide
-ls -l  /usr/share/xml/scap/ssg/content/ssg-*-ds.xml
-oscap info  /usr/share/xml/scap/ssg/content/ssg-centos7-ds.xml
-oscap xccdf eval      \--profile xccdf_org.ssgproject.content_profile_standard \--results-arf arf.xml  \--report report.html   \/usr/share/xml/scap/ssg/content/ssg-centos7-ds.xml
-
-Report und /tmp/report.html 
-```
-
-## SCAP ##
-
-  * gesprochen es-cap 
-  * Begriffsklärung: https://de.wikipedia.org/wiki/Security_Content_Automation_Protocol#:~:text=Das%20Security%20Content%20Automation%20Protocol,der%20US%2DRegierung%20f%C3%BCr%20SCAP.
-  
-## Ansible
-
-  * https://www.biteno.com/tutorial/ansible-tutorial-einfuehrung/
-  * https://dzone.com/articles/managing-your-macbook-with-ansible
