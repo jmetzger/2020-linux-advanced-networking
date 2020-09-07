@@ -30,6 +30,12 @@ We will use Centos 8 for the training
   * Upstart
   * Systemd 
   
+#### Layers of systemd 
+
+  * /usr/lib 
+  * /run/systemd
+  * /etc/systemd/system 
+  
 #### Systemd commands -> Services  
 
 ```
@@ -59,6 +65,20 @@ systemctl unmask sshd
 
 #### Runtime 
 
+```
+# main.example.com 
+# adjust interface from eth0 -> ? 
+ip addr add 10.200.45.100/24 dev eth0
+
+# secondary.example 
+# adjust interface from eth0 -> ?
+# ip addr add 10.200.45.110/24 dev eth0
+
+# Test the link from main.example.com -> secondary.example.com 
+ping 10.200.45.110
+# Test the link from secondary.example.com -> main.example.com
+ping 10.200.45.100
+```
 
 #### Boot Time 
 
