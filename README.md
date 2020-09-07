@@ -86,5 +86,29 @@ ping 10.200.45.100
 ```
 
 #### Boot Time 
+```
+###
+main.example.com 
+###
+# nano /etc/sysconfig/network-scripts/ifcfg-eth0:0
+# And configure the settings:
 
+DEVICE=eth0:0
+BOOTPROTO=static
+IPADDR=10.200.45.100
+NETMASK=255.255.255.0
+ONBOOT=yes
 
+###
+secondary.example.com 
+###
+# nano /etc/sysconfig/network-scripts/ifcfg-eth0:0
+# And configure the settings:
+
+DEVICE=eth0:0
+BOOTPROTO=static
+IPADDR=10.200.45.110
+NETMASK=255.255.255.0
+ONBOOT=yes
+
+```
