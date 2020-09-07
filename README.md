@@ -112,3 +112,13 @@ NETMASK=255.255.255.0
 ONBOOT=yes
 
 ```
+
+### Network Troubleshooting and Monitoring 
+
+#### Tools #### 
+
+  • ping
+  • traceroute
+  • nmap
+  • DNS and IP address testing
+
