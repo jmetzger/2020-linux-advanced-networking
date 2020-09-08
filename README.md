@@ -262,6 +262,14 @@ HOST: www.thomas-krenn.com
 
 ![Rsyslog-Modules](images/rsyslog.jpg?raw=true)
 
+#### rsyslog - input modules configuration 
+
+```
+$ModLoad imuxsock  # support for local system logging
+$ModLoad imjournal # access to systemd journal
+$ModLoad imklog    # kernel logging support
+```
+
 #### Remote Logging Client / Server
 
 Setup Logging to remote with systemd 
