@@ -279,8 +279,74 @@ http://ftp.rpm.org/max-rpm/s1-rpm-build-creating-spec-file.html
   * https://sites.google.com/site/syscookbook/rhel/rhel-rpm-build
 
 ```
-apt install rpm-build rpmdevtools
+# root
+dnf install rpm-build rpmdevtools
+# security concerns - do not run as root 
+# non-root
+exit # assuming coming from root 
+cd
+rpmdev-setuptree
+cd ~/rpmbuild/SOURCES
+mkdir HelloWorld-1.0
+echo 'echo "hello world!"' > HelloWorld-1.0/HelloWorld.sh
+chmod 755 HelloWorld-1.0/HelloWorld.sh
+touch HelloWorld-1.0/configure
+chmod 755 HelloWorld-1.0/configure
+tar czvf HelloWorld-1.0.tar.gz HelloWorld-1.0
+# now the spec 
+cd
+rpmdev-newspec rpmbuild/SPECS/HelloWorld-1.0.spec
+vi ~/rpmbuild/SPECS/HelloWorld-1.0.spec
 
+# Edit the following lines and change it to this:
+Name: HelloWorld
+
+Version: 1.0                       
+Release: 1%{?dist}                 
+Summary: Hello World Script
+Group: Miscellaneous               
+License: License text
+
+# URL:
+Source0: HelloWorld-1.0.tar.gz
+BuildArch: noarch                  
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+# BuildRequires:                   
+# Requires: 
+
+%description
+This is a text describing what the Package is meant for
+
+%prep
+
+%setup -q
+
+%build
+# %configure                       <--- We have nothing to configure or compile
+# make %{?_smp_mflags}                   so we comment these two lines out
+
+%install
+
+rm -rf $RPM_BUILD_ROOT
+
+# make install DESTDIR=$RPM_BUILD_ROOT    <--- We have nothing to compile
+
+install -d -m 0755 $RPM_BUILD_ROOT/opt/HelloWorld
+install -m 0755 HelloWorld.sh $RPM_BUILD_ROOT/opt/HelloWorld/HelloWorld.sh
+
+%clean
+
+rm -rf $RPM_BUILD_ROOT
+
+%files
+
+%defattr(-,root,root,-)
+
+# %doc
+
+/opt/HelloWorld/HelloWorld.sh       <--- We confirm the file(s) to install
+
+%changelog
 ```
 
 
