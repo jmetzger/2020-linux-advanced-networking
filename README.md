@@ -184,6 +184,28 @@ HOST: www.thomas-krenn.com
 
 #### Postfix 
 
+```
+yum install postfix
+postconf -e "inet_interfaces = all"
+postconf -e "mynetworks_style = subnet"
+systemctl restart postfix
+# Note: Be aware the firewall may interfere with this test.
+# Test from a remote server using telnet (you may need to install telnet):
+# Note: The commands (like helo,mail,rcpt, etc) may need to be capitalized on some distributions.
+
+# telnet <IP ADDRESS> 25
+helo localhost
+mail from:root@localhost
+rcpt to:root@localhost
+data
+Subject: email subject 
+This is neato
+.
+quit
+#
+# Verify the mail was received -> mutt 
+```
+
 #### Dovecot 
 
 ### 11. File Sharing 
