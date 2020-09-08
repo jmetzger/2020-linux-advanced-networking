@@ -275,6 +275,50 @@ sudo firewall-cmd --add-port=6996-7800/tcp --permanent
 sudo firewall-cmd --reload
 ```
 
+### Create additional disk ###
+
+```
+# Create additional disk in virtualbox 
+```
+
+### DRBD - Which disks to use: 
+
+  * Hard drive partition (or a full physical hard drive)
+  * Software RAID device
+  * LVM Logical Volume
+  * Any other block device type found on your system.
+
+### Configuration 
+
+```
+lsblk 
+# /etc/drbd.conf 
+# holds the generic configuration file / nothing needs to changed there 
+
+# Create a resource - file
+# WE USE THE COMPLETE DISK 
+# on main 
+# vi /etc/drbd.d/resource0.conf 
+resource resource0 {
+  on main.example.com {
+    device    /dev/drbd1;
+    disk      /dev/sda;
+    address   192.168.33.10:7789;
+    meta-disk internal;
+  }
+  on secondary.example.com {
+    device    /dev/drbd1;
+    disk      /dev/sda;
+    address   192.168.33.11:7789;
+    meta-disk internal;
+  }
+}
+
+
+
+
+
+```
 
 ### 19. System log 
 
