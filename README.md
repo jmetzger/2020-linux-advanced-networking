@@ -208,6 +208,26 @@ quit
 
 #### Dovecot 
 
+```
+yum install dovecot 
+# /etc/dovecot/dovecot.conf 
+# Adjst line as follows 
+protocols = imap pop3 lmtp
+
+# /etc/dovecot/conf.d/10-mail.conf 
+# adjust this line as follow 
+mail_location = mbox:~/mail:INBOX=/var/spool/mail/%u
+
+# Adjust user directory 
+# chmod 600 /var/spool/mail/vagrant 
+
+
+systemctl restart dovecot 
+
+# Test from secondary with imap 
+mutt -f imap://vagrant@192.168.33.10 
+
+
 ### 11. File Sharing 
 
 #### FTP
