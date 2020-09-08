@@ -208,6 +208,11 @@ HOST: www.thomas-krenn.com
 
 #### NTP 
 
+```
+# Since Centos 8 chrony is the default ntp serer 
+https://computingforgeeks.com/how-to-configure-ntp-server-using-chrony-on-rhel-8/
+```
+
 ### 13. HTTP Caching 
 
 #### Overview 
