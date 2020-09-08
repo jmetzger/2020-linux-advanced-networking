@@ -266,22 +266,20 @@ HOST: www.thomas-krenn.com
 
 ### 20. Package Management 
 
-#### Installing from Source 
-
-#### Package Management 
-
-#### Packaging System Benefits 
-
-#### Main Package Management Systems 
-
-#### Role of Linux Distributions 
-
 #### Building RPM Packages 
 
-#### RPM Spec File Sections 
+https://image.slidesharecdn.com/els304-100324145410-phpapp02/95/configure-pack-and-distribute-an-rpm-creation-workshop-11-728.jpg?cb=1269442566
 
-#### RPM Spec File Example 
+#### RPM Spec File Sections/Example  
 
+http://ftp.rpm.org/max-rpm/s1-rpm-build-creating-spec-file.html
+
+#### Build 
+
+```
+cd /usr/src/redhat/SPECS
+rpmbuild -ba cdplayer-1.0.spec
+```
 
 
 
