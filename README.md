@@ -258,11 +258,13 @@ HOST: www.thomas-krenn.com
 
 ### 19. System log 
 
-#### Overview 
+#### rsyslog - overview 
 
-#### Remote Logging Client
+![Rsyslog-Modules](../images/rsyslog.jpg?raw=true)
 
-#### Remote Logging Server 
+#### Remote Logging Client / Server
+
+Setup Logging to remote with systemd 
 
 ### 20. Package Management 
 
