@@ -260,7 +260,7 @@ HOST: www.thomas-krenn.com
 
 #### rsyslog - overview 
 
-![Rsyslog-Modules](../images/rsyslog.jpg?raw=true)
+![Rsyslog-Modules](images/rsyslog.jpg?raw=true)
 
 #### Remote Logging Client / Server
 
