@@ -212,6 +212,20 @@ HOST: www.thomas-krenn.com
 
 #### Overview 
 
+#### Squid Examples 
+
+```
+acl workinghours time MTWHF 08:00-18:00
+http_access allow hourlyworkers workinghours
+http_access deny hourlyworkers
+# To restrict by a part of the URI:
+acl banned_reddit url_regex ^http://.*reddit.com/\.*$
+http_access deny banned_reddit
+# To allow only authenticated users to use the following configuration:
+acl valid_users proxy_auth REQUIRED
+http_access allow valid_users
+http_access deny all
+```
 #### Squid Configuration 
 
 ```
