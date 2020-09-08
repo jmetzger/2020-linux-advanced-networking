@@ -302,22 +302,41 @@ lsblk
 resource resource0 {
   on main.example.com {
     device    /dev/drbd1;
-    disk      /dev/sda;
+    disk      /dev/sdb;
     address   192.168.33.10:7789;
     meta-disk internal;
   }
   on secondary.example.com {
     device    /dev/drbd1;
-    disk      /dev/sda;
+    disk      /dev/sdb;
     address   192.168.33.11:7789;
     meta-disk internal;
   }
 }
+```
 
+```
+# Execute on both nodes main.example.com / secondary.example.com 
+sudo drbdadm create-md resource0
+sudo drbdadm up resource0
+# currently inconsistent 
+sudo drbdadm status resource0
+```
 
+```
+# Now decide with which node to feed the data with 
+# we go for main.example.com
+# -> so -> do this -> on main.example.com 
+sudo drbdadm primary --force resource0
+```
 
-
-
+```
+sudo drbdadm status resource0
+resource0 role:Primary
+  disk:UpToDate
+  secondary.example.com role:Secondary
+    replication:SyncSource peer-disk:Inconsistent done:48.29
+# 48.29 means percentage here 
 ```
 
 ### 19. System log 
