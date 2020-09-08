@@ -342,7 +342,8 @@ rm -rf $RPM_BUILD_ROOT
 
 /opt/HelloWorld/HelloWorld.sh
 
-%changelog```
+%changelog
+```
 
 ```
 # building 
