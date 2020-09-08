@@ -356,7 +356,7 @@ ls -la
 # total 4
 # -rw-rw-r-- 1 user user 2104 Sep 26 16:53 HelloWorld-1.0-1.el8.noarch.rpm
 
-rpm -qpl HelloWorld-1.0-1.el6.noarch.rpm
+rpm -qpl HelloWorld-1.0-1.el8.noarch.rpm
 # output 
 # /opt/HelloWorld/HelloWorld.sh
 
