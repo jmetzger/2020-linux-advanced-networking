@@ -121,4 +121,15 @@ ONBOOT=yes
   * traceroute
   * nmap
   * DNS and IP address testing
+  
+#### HTTPS - Client troubleshooting ####
+
+```
+openssl s_client -connect www.heise.de:https
+# STEP 2: Within the connection  
+openssl s_client -connect www.heise.de:https
+GET / HTTP/1.1
+HOST: www.thomas-krenn.com
+```
+
 
