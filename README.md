@@ -249,6 +249,38 @@ HOST: www.thomas-krenn.com
 #### libvirt 
 
 #### Docker Example 
+ 
+```
+## Installation 
+
+# on centos8 we need the repo from docker
+sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+# containerd version does not fit 
+# so we take nobest option 
+sudo dnf install --nobest docker-ce
+``` 
+
+```
+## Running the show 
+
+systemctl start docker
+systemctl enable docker 
+docker pull docker.io/httpd
+docker images
+docker images --all
+docker run httpd 
+yum install wget 
+wget -dump http://172.0.0.1
+# ctl-c
+docker stop httpd
+# Important ! remove container 
+# show all container, also those who are stopped 
+docker ps -a 
+docker rm httpd 
+docker rmi -f docker.io/httpd
+systemctl stop docker
+systemctl disable docker 
+```
 
 ### 18. High Availability 
 
