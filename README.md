@@ -256,6 +256,26 @@ HOST: www.thomas-krenn.com
 
 #### DRDB 
 
+### Setup Repo 
+
+```
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+yum install https://www.elrepo.org/elrepo-release-8.el8.elrepo.noarch.rpm
+```
+
+### Install DRBD 
+
+```
+sudo dnf install vim drbd90-utils kmod-drbd90
+# adjust selinux 
+sudo dnf -y install policycoreutils-python-utils
+sudo semanage permissive -a drbd_t
+# if firewall is running 
+sudo firewall-cmd --add-port=6996-7800/tcp --permanent
+sudo firewall-cmd --reload
+```
+
+
 ### 19. System log 
 
 #### rsyslog - overview 
