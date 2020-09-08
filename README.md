@@ -211,6 +211,15 @@ HOST: www.thomas-krenn.com
 ```
 # Since Centos 8 chrony is the default ntp serer 
 https://computingforgeeks.com/how-to-configure-ntp-server-using-chrony-on-rhel-8/
+
+# Minimum configu 
+pool pool.ntp.org iburst
+driftfile /var/lib/chrony/drift
+makestep 1 3
+rtcsync
+
+# Docs 
+https://chrony.tuxfamily.org/
 ```
 
 ### 13. HTTP Caching 
