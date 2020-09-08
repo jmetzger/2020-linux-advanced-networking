@@ -280,7 +280,7 @@ http://ftp.rpm.org/max-rpm/s1-rpm-build-creating-spec-file.html
 
 ```
 # root
-dnf install rpm-build rpmdevtools
+dnf install rpm-build rpmdevtools git
 # security concerns - do not run as root 
 # non-root
 exit # assuming coming from root 
@@ -296,11 +296,12 @@ tar czvf HelloWorld-1.0.tar.gz HelloWorld-1.0
 # now the spec 
 cd
 rpmdev-newspec rpmbuild/SPECS/HelloWorld-1.0.spec
+
+# Now edit the settings 
 vi ~/rpmbuild/SPECS/HelloWorld-1.0.spec
 
 # Edit the following lines and change it to this:
 Name: HelloWorld
-
 Version: 1.0                       
 Release: 1%{?dist}                 
 Summary: Hello World Script
@@ -349,6 +350,28 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 ```
 
+```
+# building 
+rpmbuild -ba rpmbuild/SPECS/HelloWorld-1.0.spec
 
+# Assuming no errors occurred, new package is under the RPMS folder ready to be installed.
+cd ~/rpmbuild/RPMS/noarch
+ls -la 
+# output 
+# total 4
+# -rw-rw-r-- 1 user user 2104 Sep 26 16:53 HelloWorld-1.0-1.el6.noarch.rpm
 
+rpm -qpl HelloWorld-1.0-1.el6.noarch.rpm
+# output 
+# /opt/HelloWorld/HelloWorld.sh
 
+# switch to root
+sudo su 
+rpm -ihv /home/user/rpmbuild/RPMS/noarch/HelloWorld-1.0-1.el6.noarch.rpm
+rpm -qa HelloWorld
+# Output 
+# HelloWorld-1.0-1.el6.noarch
+
+/opt/HelloWorld/HelloWorld.sh
+# Output 
+# Hello world!
