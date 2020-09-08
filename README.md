@@ -274,11 +274,13 @@ https://image.slidesharecdn.com/els304-100324145410-phpapp02/95/configure-pack-a
 
 http://ftp.rpm.org/max-rpm/s1-rpm-build-creating-spec-file.html
 
-#### Build 
+#### Example Build hello world  
+
+  * https://sites.google.com/site/syscookbook/rhel/rhel-rpm-build
 
 ```
-cd /usr/src/redhat/SPECS
-rpmbuild -ba cdplayer-1.0.spec
+apt install rpm-build rpmdevtools
+
 ```
 
 
