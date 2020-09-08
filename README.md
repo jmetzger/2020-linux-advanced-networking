@@ -318,6 +318,11 @@ resource resource0 {
 ```
 # Execute on both nodes main.example.com / secondary.example.com 
 sudo drbdadm create-md resource0
+```
+
+### starting and syncing 
+
+```
 sudo drbdadm up resource0
 # currently inconsistent 
 sudo drbdadm status resource0
@@ -337,6 +342,32 @@ resource0 role:Primary
   secondary.example.com role:Secondary
     replication:SyncSource peer-disk:Inconsistent done:48.29
 # 48.29 means percentage here 
+```
+
+### pouplate and switch nodes 
+
+```
+# populate on master 
+mkdir /mnt/drbd 
+mount /dev/drbd1 /mnt/drbd 
+cd /mnt/drbd 
+for i in {1..10}; do   sudo touch /mnt/drbd/${i}.txt; done
+ls -la 
+cd ..
+```
+
+```
+# change main.example.com from master to secondary 
+umount /mnt/drbd 
+drbdadm secondary resource0
+```
+
+```
+# Change secondary.example.com from secondary to master
+sudo drbdadm primary resource0
+mkdir /mnt/drbd 
+mount /dev/drdb1 /mnt/drbd 
+cd /mnt/drbd 
 ```
 
 ### 19. System log 
