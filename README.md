@@ -366,8 +366,10 @@ rpm -qpl HelloWorld-1.0-1.el6.noarch.rpm
 # /opt/HelloWorld/HelloWorld.sh
 
 # switch to root
+cd 
+cd rpmbuild/RPMS/noarch 
 sudo su 
-rpm -ihv /home/user/rpmbuild/RPMS/noarch/HelloWorld-1.0-1.el8.noarch.rpm
+rpm -ihv HelloWorld-1.0-1.el8.noarch.rpm
 rpm -qa HelloWorld
 # Output 
 # HelloWorld-1.0-1.el8.noarch
