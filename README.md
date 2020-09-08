@@ -214,6 +214,34 @@ HOST: www.thomas-krenn.com
 
 #### Squid Configuration 
 
+```
+yum install squid 
+# add the setings in 
+# /etc/squid/squid.conf 
+#
+# INSERT YOUR OWN RULE(S) HERE TO ALLOW ACCESS FROM YOUR CLIENTS
+#
+acl t3isp url_regex ^http://.*.t3isp.de/.*$
+http_access deny t3isp
+
+acl examplenetwork src 192.168.33.0/24
+http_access allow examplenetwork
+```
+
+```
+squid -k parse 
+systemctl restart squid 
+```
+
+```
+# add proxy in browser 
+# 192.168.x.x 3128 
+# test if proxy works by opening
+# http://schulung.t3isp.de 
+# another url, that is not existent
+# http://foo.example.com 
+```
+
 ### 14. NFS 
 
 #### NFS 
