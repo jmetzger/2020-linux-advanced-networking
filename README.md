@@ -29,7 +29,11 @@ We will use Centos 8 for the training
   * /usr/lib 
   * /run/systemd
   * /etc/systemd/system 
-  
+
+#### Start service multiple times 
+
+https://www.stevenrombauts.be/2019/01/run-multiple-instances-of-the-same-systemd-unit/
+
 #### Systemd commands -> Services  
 
 ```
