@@ -16,13 +16,7 @@ We will use Centos 8 for the training
   * firewalld 
   * ip 
   
-### 2. DNS 
-
-#### Overview 
-
-#### Tools 
-
-### 3. Managing System Services 
+### 2. Managing System Services 
 
 #### Overview 
 
@@ -66,7 +60,7 @@ systemctl unmask sshd
 
 ```
 
-### 4. Network Configuration 
+### 3. Network Configuration 
 
 #### Runtime 
 
@@ -113,7 +107,7 @@ ONBOOT=yes
 
 ```
 
-### 5. Network Troubleshooting and Monitoring 
+### 4. Network Troubleshooting and Monitoring 
 
 #### Tools #### 
 
@@ -132,7 +126,7 @@ GET / HTTP/1.1
 HOST: www.thomas-krenn.com
 ```
 
-### 6. Remote Access 
+### 5. Remote Access 
 
 #### Cryptography Intro 
 
@@ -143,16 +137,48 @@ HOST: www.thomas-krenn.com
 #### Remote Graphics 
 
 
-### 7. Domain Name Service 
+### 6. Domain Name Service 
 
 #### Overview of DNS 
 
+https://www.cloudflare.com/img/learning/dns/what-is-dns/dns-lookup-diagram.png
 
 #### BIND (named) Server 
 
+```
+# Caching Server 
+yum install bind 
+# /etc/named.conf 
+listen-on port 53 { any; };
+allow-query     { any; };
+systemctl restart named
+
+# Testing 
+yum provides dig 
+# instal package 
+dig @localhost google.com 
+```
 
 #### BIND Zone Configuration 
 
+```
+# /var/named/example.com.zone 
+$TTL 30
+@ IN SOA  localhost. admin.example.com. (
+2012092901 ; serial YYYYMMDDRR format
+3H         ; refresh
+1H         ; retry
+2H         ; expire
+1M)        ; neg ttl
+
+                  IN NS localhost.;
+www.example.com.  IN A 192.168.111.45
+www.example.com.  IN AAAA fe80::22c9:d0ff:1ecd:c0ef
+foo.example.com.  IN A 192.168.121.11
+bar.example.com.  IN CNAME www.example.com.
+;generate one hundred entries host1 thru host100
+$GENERATE 1-100 host$.example.com.  IN A 10.20.45.$
+```
 
 ### 8. HTTP Servers 
 
