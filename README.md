@@ -271,7 +271,7 @@ systemctl restart dovecot
 
 # Test from secondary with imap 
 mutt -f imap://vagrant@192.168.33.10 
-
+```
 
 ### 11. File Sharing 
 
