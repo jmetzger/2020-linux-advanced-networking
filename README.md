@@ -352,6 +352,11 @@ systemctl restart squid
 # http://foo.example.com 
 ```
 
+```
+# Restrict based on ldap 
+https://workaround.org/squid-ldap/
+```
+
 ### 14. NFS 
 
 #### NFS 
