@@ -289,7 +289,7 @@ mutt -f imap://vagrant@192.168.33.10
 # Since Centos 8 chrony is the default ntp serer 
 https://computingforgeeks.com/how-to-configure-ntp-server-using-chrony-on-rhel-8/
 
-# Minimum configu 
+# Minimum configuration 
 pool pool.ntp.org iburst
 driftfile /var/lib/chrony/drift
 makestep 1 3
@@ -298,6 +298,11 @@ rtcsync
 # Docs 
 https://chrony.tuxfamily.org/
 ```
+
+```
+# manually update like ntpdate 
+# updates in 1 second 
+chronyd -q -t 1 'server 192.168.56.102 iburst maxsamples 1'
 
 ### 13. HTTP Caching 
 
@@ -510,7 +515,7 @@ resource0 role:Primary
 # 48.29 means percentage here 
 ```
 
-### pouplate and switch nodes 
+### populate and switch nodes 
 
 ```
 # populate on master 
