@@ -275,23 +275,13 @@ mutt -f imap://vagrant@192.168.33.10
 
 ### 11. File Sharing 
 
-#### FTP
-
-#### vsftpd 
-
 #### rsync 
-
-#### SSH Based Protocols 
-
-#### Other Protocols 
 
 ### 12. Advanced Networking 
 
 #### Routing
 
 #### VLANs 
-
-#### DHCP
 
 #### NTP 
 
@@ -360,10 +350,6 @@ systemctl restart squid
 ### 14. NFS 
 
 #### NFS 
-
-#### SMB/CIFS 
-
-#### Other Network File Systems 
 
 ### 15. Introduction to Network Security 
 
