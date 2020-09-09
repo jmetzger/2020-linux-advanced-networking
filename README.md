@@ -425,6 +425,11 @@ systemctl stop docker
 systemctl disable docker 
 ```
 
+```
+# Run private repo 
+https://linuxhint.com/setup_own_docker_image_repository/
+```
+
 ### 18. High Availability 
 
 #### Overview 
