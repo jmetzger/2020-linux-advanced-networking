@@ -356,6 +356,18 @@ systemctl restart squid
 # Restrict based on ldap 
 https://workaround.org/squid-ldap/
 ```
+```
+# Restrict for specific users
+# Subset who don't have access to web whatsapp
+acl no_web_whatsapp src IP1 IP2 IP3 IP4
+acl web_whatsapp dstdomain web.whatsapp.com
+# Group incouding IP1-IP4; the rest of group has access to web whatsapp
+acl your_group src IP1 IP2 IP3 IP4 IP5 IP6 IP7 IP8 IP9 IP10 IP11
+
+http_access deny no_web_whatsapp web_whatsapp
+http_access allow your_group
+```
+
 
 ### 14. NFS 
 
