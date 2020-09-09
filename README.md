@@ -163,9 +163,24 @@ yum provides dig
 dig @localhost google.com 
 ```
 
+#### Bypass BIND / be authorative  
+
+```
+# makes a recursive request 
+dig google.de +trace 
+
+```
+
 #### BIND Zone Configuration 
 
 ```
+# /etc/named.conf 
+# put it just after the other zone 
+zone "example.com." IN {
+            type master;
+            file "example.com.zone";
+};
+
 # /var/named/example.com.zone 
 $TTL 30
 @ IN SOA  localhost. admin.example.com. (
