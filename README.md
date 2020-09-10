@@ -233,10 +233,12 @@ systemctl reload httpd
 192.168.56.102 example.com 
 192.168.56.102 www.example.com
 192.168.56.102 static.example.com 
-``
+```
+
+#### SSL-Config - That what letsencrypt did 
 
 ```
-for i in * ; do echo "----"; echo $i ; echo "----"; cat $i; done
+# /etc/httpd/sites.d
 ----
 _default.conf
 ----
@@ -277,12 +279,20 @@ TransferLog logs/static.example.com-access_log
 </VirtualHost>
 [root@main sites.d]#
 ```
+```
+# imporant - set this path in  
+# /etc/httpd/conf/httpd.conf 
+echo 'IncludeOptional 'sites.d/*.conf' >> /etc/httpd/conf/httpd.conf
+```
+
+
 
 #### Apache Security 
 
-https://www.tecmint.com/secure-apache-with-lets-encrypt-ssl-certificate-on-centos-8/
+  * https://www.tecmint.com/secure-apache-with-lets-encrypt-ssl-certificate-on-centos-8/
 
 ```
+# What did letsencrypt change
 # folder: /etc/httpd/conf.d
 # Upgrade http to https by redirect
 # or in # version with mod_rewrite 
