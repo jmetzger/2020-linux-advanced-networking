@@ -282,6 +282,38 @@ TransferLog logs/static.example.com-access_log
 
 https://www.tecmint.com/secure-apache-with-lets-encrypt-ssl-certificate-on-centos-8/
 
+```
+# folder: /etc/httpd/conf.d
+# Upgrade http to https by redirect
+# or in # version with mod_rewrite 
+<VirtualHost *>
+  ServerName nb1.t3isp.de
+  ServerAlias nb2.t3isp.de
+  DocumentRoot /var/www/nb1.t3isp.de/
+  <Directory /var/www/nb1.ti3p.de/>
+      Options -Indexes +FollowSymLinks
+      AllowOverride All
+  </Directory>
+  ErrorLog /var/log/httpd/nb1.t3isp.de
+  CustomLog /var/log/httpd/nb1.t3isp.de combined
+#RewriteEngine on
+#RewriteCond %{SERVER_NAME} =nb2.t3isp.de [OR]
+#RewriteCond %{SERVER_NAME} =nb1.t3isp.de
+#RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+
+  Redirect permanent / https://nb1.t3isp.de
+
+</VirtualHost>:w
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+"nb1.t3isp.de.conf" 19L, 552C
+
+
+```
+
+
 ### 8. Advanced HTTP Servers 
 
 #### mod_rewrite 
