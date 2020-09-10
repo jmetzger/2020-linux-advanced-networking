@@ -114,7 +114,10 @@ ONBOOT=yes
 #### nmcli .. the easy way ####
 
 ```
-sudo nmcli con mod enp8s0 +ipv4.addresses "192.168.122.11/24"
+sudo nmcli show 
+sudo nmcli con mod "System eth1" +ipv4.addresses "192.168.122.11/24"
+sudo nmcli con down "System eth1" 
+sudo nmcli con up "System eth1" 
 ```
 
 
@@ -343,6 +346,7 @@ https://chrony.tuxfamily.org/
 # manually update like ntpdate 
 # updates in 1 second 
 chronyd -q -t 1 'server 192.168.56.102 iburst maxsamples 1'
+```
 
 ### 13. HTTP Caching 
 
