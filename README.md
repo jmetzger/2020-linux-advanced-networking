@@ -723,6 +723,31 @@ $ModLoad imklog    # kernel logging support
 
 Setup Logging to remote with systemd 
 
+```
+cat  /etc/systemd/journal-upload.conf
+# See journal-upload.conf(5) for details
+[Upload]
+URL=http://192.168.122.38:19532
+# ServerKeyFile=/etc/ssl/private/journal-upload.pem
+# ServerCertificateFile=/etc/ssl/certs/journal-upload.pem
+# TrustedCertificateFile=/etc/ssl/ca/trusted.pem
+```
+
+```
+systemctl start systemd-journal-upload
+systemctl status systemd-journal-upload
+```
+
+```
+# systemctl | grep journal
+```
+
+```
+# Monitor the messages from secondary with journalctl.
+[root@main  ̃]# journalctl -f -D /var/log/journal/remote
+[root@secondary  ̃]# logger "This is a test message sent to the systemd-journal".
+```
+
 ### 20. Package Management 
 
 #### Building RPM Packages 
