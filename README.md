@@ -758,10 +758,25 @@ systemctl start systemd-journal-upload
 # troubleshoot with /var/log/audit/audit.log 
 # You will find the type=AVC there an the port denied
 # Fix: might take some time 
-sudo semanage port -a -t unreserved_port_t -p tcp 19532
+```
 
+```
+# does not work 
+# sudo semanage port -a -t unreserved_port_t -p tcp 19532
+716  sealert -a /var/log/audit/audit.log
+  717  ausearch -c 'systemd-journal' --raw | audit2allow -M my-systemdjournal
+  718  ls -la
+  719  vi my-systemdjournal.te
+  720  vi my-systemdjournal.te
+  721  getsebool nis_enabled
+  722  setsebool nis_enabled on
+  723  getsebool nis_enabled
+  724  systemctl start systemd-journal-upload
+  725  systemctl status systemd-journal-upload
+  726  history
+```
 
-
+```
 systemctl status systemd-journal-upload
 ```
 
