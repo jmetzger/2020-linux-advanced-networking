@@ -752,6 +752,16 @@ URL=http://192.168.122.38:19532
 
 ```
 systemctl start systemd-journal-upload
+
+# problems when starting might come from selinux 
+# sestatus
+# troubleshoot with /var/log/audit/audit.log 
+# You will find the type=AVC there an the port denied
+# Fix: might take some time 
+sudo semanage port -a -t unreserved_port_t -p tcp 19532
+
+
+
 systemctl status systemd-journal-upload
 ```
 
