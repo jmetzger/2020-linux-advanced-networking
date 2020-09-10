@@ -327,14 +327,14 @@ s.o.
 
 #### mod_alias 
 
-#### mod_status 
+```
+# Serve another directory instead of /test 
+Alias /test /var/www/test 
+```
 
- 
 
 
 ### 10. Email Servers 
-
-#### Email Overview 
 
 #### Postfix 
 
