@@ -221,7 +221,51 @@ $GENERATE 1-100 host$.example.com.  IN A 10.20.45.$
 
 #### Apache Virtual Hosts 
 
+```
+for i in * ; do echo "----"; echo $i ; echo "----"; cat $i; done
+----
+_default.conf
+----
+NameVirtualHost *
+<VirtualHost *>
+ServerAdmin webmaster@example.com
+DocumentRoot /var/www/html
+
+<Directory /var/www/html>
+   Options +Indexes
+</Directory>
+
+
+</VirtualHost>
+----
+example.com.conf
+----
+NameVirtualHost *
+<VirtualHost *>
+ServerAdmin webmaster@example.com
+DocumentRoot /var/www/example.com/
+ServerName  example.com
+ServerAlias www.example.com
+ErrorLog logs/example.com-error_log
+TransferLog logs/example.com-access_log
+</VirtualHost>
+----
+sites.example.com.conf
+----
+NameVirtualHost *
+<VirtualHost *>
+ServerAdmin webmaster@example.com
+DocumentRoot /var/www/static.example.com/
+ServerName  static.example.com
+ServerAlias static2.example.com
+ErrorLog logs/static.example.com-error_log
+TransferLog logs/static.example.com-access_log
+</VirtualHost>
+[root@main sites.d]#
+```
+
 #### Apache Security 
+
 
 
 ### 9. Advanced HTTP Servers 
