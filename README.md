@@ -213,13 +213,27 @@ bar.example.com.  IN CNAME www.example.com.
 $GENERATE 1-100 host$.example.com.  IN A 10.20.45.$
 ```
 
-### 8. HTTP Servers 
+### 7. HTTP Servers 
 
 #### Apache 
 
 #### Apache Configuration 
 
 #### Apache Virtual Hosts 
+
+```
+cd /etc/httpd/
+# cleaner to have the own directory for projects 
+mkdir sites.d
+# add this entry to httpd.conf 
+echo 'echo "IncludeOptional /etc/httpd/sites.d/*.conf' >> /etc/httpd/conf/httpd.conf 
+# reload
+systemctl reload httpd 
+# Remember for testing to put the entries in your hosts - file on windows
+192.168.56.102 example.com 
+192.168.56.102 www.example.com
+192.168.56.102 static.example.com 
+``
 
 ```
 for i in * ; do echo "----"; echo $i ; echo "----"; cat $i; done
@@ -266,19 +280,17 @@ TransferLog logs/static.example.com-access_log
 
 #### Apache Security 
 
+https://www.tecmint.com/secure-apache-with-lets-encrypt-ssl-certificate-on-centos-8/
 
+### 8. Advanced HTTP Servers 
 
-### 9. Advanced HTTP Servers 
-
-#### mod_rerite 
+#### mod_rewrite 
 
 #### mod_alias 
 
 #### mod_status 
 
-#### mod_perl 
-
-#### Performance considerations 
+ 
 
 
 ### 10. Email Servers 
