@@ -724,6 +724,23 @@ $ModLoad imklog    # kernel logging support
 Setup Logging to remote with systemd 
 
 ```
+#Open the firewall ports on main.example.com (192.168.122.38) and test.
+#[root@main:  ̃]# firewall-cmd --zone=public --add-port=19531/tcp --perm
+#[root@main:  ̃]# firewall-cmd --zone=public --add-port=19532/tcp --perm
+#[root@main:  ̃]# firewall-cmd --reload
+
+cp /usr/lib/systemd/system/systemd-journal-remote.* /etc/systemd/system/
+
+# /etc/systemd/system/systemd-journal-remote.service 
+[Service]
+ExecStart=/usr/lib/systemd/systemd-journal-remote --listen-http=-3 --output=/var/log/journal/remote/ User=systemd-journal-remote
+
+systemctl daemon-reload
+systemctl start systemd-journal-remote
+systemctl | grep journal
+
+```
+## secondary
 cat  /etc/systemd/journal-upload.conf
 # See journal-upload.conf(5) for details
 [Upload]
