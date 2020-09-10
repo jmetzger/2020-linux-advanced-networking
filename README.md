@@ -314,9 +314,16 @@ https://www.tecmint.com/secure-apache-with-lets-encrypt-ssl-certificate-on-cento
 ```
 
 
+```
+# To test ssl certificate use:
+https://www.ssllabs.com/ssltest
+```
+
 ### 8. Advanced HTTP Servers 
 
 #### mod_rewrite 
+
+s.o.
 
 #### mod_alias 
 
