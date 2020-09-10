@@ -111,6 +111,13 @@ ONBOOT=yes
 
 ```
 
+#### nmcli .. the easy way ####
+
+```
+sudo nmcli con mod enp8s0 +ipv4.addresses "192.168.122.11/24"
+```
+
+
 ### 4. Network Troubleshooting and Monitoring 
 
 #### Tools #### 
