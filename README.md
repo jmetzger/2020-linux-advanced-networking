@@ -765,6 +765,13 @@ systemctl status systemd-journal-upload
 [root@secondary  ̃]# logger "This is a test message sent to the systemd-journal".
 ```
 
+#### Enable ssl / use certificate 
+
+```
+http://manpages.ubuntu.com/manpages/bionic/de/man8/systemd-journal-upload.8.html
+--> see bottom of file 
+```
+
 ### 20. Package Management 
 
 #### Building RPM Packages 
