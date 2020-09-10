@@ -748,6 +748,7 @@ ExecStart=/usr/lib/systemd/systemd-journal-remote --listen-http=-3 --output=/var
 systemctl daemon-reload
 systemctl start systemd-journal-remote
 systemctl | grep journal
+```
 
 ```
 ## secondary
