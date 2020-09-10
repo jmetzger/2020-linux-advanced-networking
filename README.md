@@ -283,6 +283,39 @@ mutt -f imap://vagrant@192.168.33.10
 
 #### VLANs 
 
+##### Doc - Redhat 
+
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/sec-configure_802_1q_vlan_tagging_using_the_command_line_tool_nmcli
+
+#### Example 
+
+```
+# it is a bit different in Centos 8 
+# because of NetworkManager 
+# 1. Show all connections 
+nmcli con show
+# Setup vlan connection with nmtui 
+# Set static ip 
+# and 1. deactivate it / 2. activate it 
+
+# Manually up connection 
+nmcli con up "VLAN connection 2"
+
+# Manually down connection
+nmcli con down "VLAN connection 2" 
+
+# Manually delete connection 
+nmcli con del "VLAN connection 2" 
+
+# show details 
+nmcli connection show "VLAN connection 2"
+
+# change specific settings
+nmcli conn modify "VLAN connection 2" 802.mtu 1496
+
+```
+
+
 #### NTP 
 
 ```
