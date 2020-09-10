@@ -118,6 +118,10 @@ sudo nmcli show
 sudo nmcli con mod "System eth1" +ipv4.addresses "192.168.122.11/24"
 sudo nmcli con down "System eth1" 
 sudo nmcli con up "System eth1" 
+
+# Interface name change 
+nmcli conn modify WC1 connection.id WC1a
+
 ```
 
 
@@ -290,6 +294,10 @@ mutt -f imap://vagrant@192.168.33.10
 ### 12. Advanced Networking 
 
 #### Routing
+
+```
+nmcli connection modify enp1s0 +ipv4.routes "192.168.122.0/24 10.10.10.1"
+```
 
 #### VLANs 
 
